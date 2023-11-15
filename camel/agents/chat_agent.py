@@ -193,7 +193,7 @@ class ChatAgent(BaseAgent):
                 raise RuntimeError("OpenAI returned unexpected struct")
             output_messages = [
                 ChatMessage(role_name=self.role_name, role_type=self.role_type,
-                            meta_dict=dict(), **dict(choice["message"]))
+                            meta_dict=dict(), **{key: value for key, value in choice["message"].items() if key != "logprobs"})
                 for choice in response["choices"]
             ]
             info = self.get_info(

@@ -2,6 +2,7 @@ colorama==0.4.6
 Flask==2.3.2
 Flask-SocketIO==5.3.4
 importlib-metadata==6.8.0
+litellm>=0.1.609
 numpy==1.24.3
 openai==0.27.8
 regex==2023.6.3
